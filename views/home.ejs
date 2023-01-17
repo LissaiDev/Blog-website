@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+
+<h1>Home</h1>
+
+<p>
+    <%= homeStartingContent%>
+</p>
+
+<% posts.forEach((obj,indice)=>{ %>
+    <h1>
+        <%= obj.composeTitle %>
+    </h1>
+    <p>
+       <% if(obj.composeText.length>100){ %>
+    <%        obj.composeText = `${obj.composeText.substring(0,100)}...` %>
+      <%  } %>
+        <%= obj.composeText %>
+    </p>
+<% }) %>
+
+<%- include('partials/footer') -%>
